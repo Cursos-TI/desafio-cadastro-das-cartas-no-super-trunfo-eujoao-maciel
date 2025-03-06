@@ -1,3 +1,6 @@
+// Desafio nível aventureiro 
+// Adicionado variáveis Densidade populaciona e pib per capita
+
 #include <stdio.h>
 
 int main() {
