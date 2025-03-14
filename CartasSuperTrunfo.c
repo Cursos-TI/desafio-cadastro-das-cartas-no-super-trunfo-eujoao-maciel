@@ -1,6 +1,3 @@
-// Desafio nível aventureiro 
-// Adicionado variáveis Densidade populaciona e pib per capita
-
 #include <stdio.h>
 
 int main() {
@@ -14,6 +11,7 @@ int main() {
     int pontos_turisticos_carta1;
     float densidade_populacional_carta1; 
     float pib_per_capita_carta1; 
+    double super_poder_carta1;
 
 
     // Criação das variáveis da carta2
@@ -26,6 +24,7 @@ int main() {
     int pontos_turisticos_carta2;
     float densidade_populacional_carta2; 
     float pib_per_capita_carta2; 
+    double super_poder_carta2;
 
     // Interação e solicitação de entrada de valores CARTA 1
     printf("------------Super Trunfo------------\n");
@@ -49,6 +48,10 @@ int main() {
     densidade_populacional_carta1 = (float) populacao_carta1/area_carta1;
     pib_per_capita_carta1 = (float) pib_carta1/populacao_carta1;
 
+    // Atribuição do super poder carta1
+    float densidade_populacional_invetida_carta1 = 1/densidade_populacional_carta1;
+    super_poder_carta1 = (double) populacao_carta1 +  area_carta1 + pib_carta1 + (double) pontos_turisticos_carta1 + pib_per_capita_carta1 + densidade_populacional_invetida_carta1;
+
     // Interação e solicitação de entrada de valores CARTA 2
     printf("------------------------------------------------------\n");
     printf("------------------------------------------------------\n");
@@ -70,9 +73,13 @@ int main() {
     printf("------------------------------------------------------\n");
     printf("------------------------------------------------------\n");
 
-    // Calculo densidade populacional e pib per capita da carta2
+    // Calculo densidade populacional e pib per capita da carta1
     densidade_populacional_carta2 = (float) populacao_carta2/area_carta2;
     pib_per_capita_carta2 = (float) pib_carta2/populacao_carta2;
+
+    // Atribuição do super poder carta2
+    float densidade_populacional_invetida_carta2 = 1/densidade_populacional_carta2;
+    super_poder_carta2 = (double) populacao_carta2 + (double) area_carta2 + (double) pib_carta2 + pontos_turisticos_carta2 + (double) pib_per_capita_carta2 + (double) densidade_populacional_invetida_carta2;
 
     // Prift das infos da carta01
     printf("Carta 1: \n");
@@ -85,6 +92,7 @@ int main() {
     printf("Pontos Turísticos: %d \n", pontos_turisticos_carta1);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade_populacional_carta1);
     printf("PIB per Capita: %.2f reais\n", pib_per_capita_carta1);
+    printf("Super poder: %.2f\n", super_poder_carta1);
     printf("------------------------------------------------------\n");
     printf("------------------------------------------------------\n");
 
@@ -99,4 +107,20 @@ int main() {
     printf("Pontos Turísticos: %d \n", pontos_turisticos_carta2);
     printf("Densidade Polulacional: %.2f hab/km²\n", densidade_populacional_carta2);
     printf("PIB per Capita: %.2f reais\n", pib_per_capita_carta2);
+    printf("Super poder: %.2f \n", super_poder_carta2);
+    printf("------------------------------------------------------\n");
+    printf("------------------------------------------------------\n");
+
+    // Comparação entre os atributos das cartas
+    printf("Comparação de Cartas: \n");
+    printf("[1] para carta1 e [0] para carta2 \n");
+    printf("População: %d \n", populacao_carta1 > populacao_carta2);
+    printf("Area: %d \n", area_carta1 > area_carta2);
+    printf("PIB: %d \n", pib_carta1 > pib_carta2);
+    printf("Pontos Turísticos: %d \n", pontos_turisticos_carta1 > pontos_turisticos_carta2);
+    printf("Densidade Populacional: %d \n", densidade_populacional_carta1 > densidade_populacional_carta2);
+    printf("PIB per Capita: %d \n", pib_per_capita_carta1 > pib_per_capita_carta2);
+    printf("Super Poder: %d \n", super_poder_carta1 > super_poder_carta2);
+
+    return 0;
 }
